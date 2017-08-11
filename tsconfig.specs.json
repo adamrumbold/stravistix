@@ -1,0 +1,27 @@
+{
+  "files": [
+    "plugin/core/core.d.ts"
+  ],
+  "include": [
+    "specs/hellotest/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": [
+      "dom",
+      "es6",
+      "webworker"
+    ],
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "inlineSources": true,
+    "skipLibCheck": true
+  },
+  "compileOnSave": false
+}

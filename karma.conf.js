@@ -5,10 +5,13 @@ module.exports = function (config) {
             'PhantomJS',
             // 'Chrome'
         ],
-        frameworks: ['systemjs', 'jasmine', 'promise'],
+        frameworks: [
+            // 'systemjs',
+            'jasmine', 'karma-typescript', 'promise'],
         plugins: [
             'karma-jasmine',
-            'karma-systemjs',
+            // 'karma-systemjs',
+            'karma-typescript',
             'karma-promise',
             'karma-phantomjs-launcher',
             'karma-chrome-launcher',
@@ -18,26 +21,31 @@ module.exports = function (config) {
             exitOnResourceError: true  // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom)
         },
         files: [
-            'plugin/node_modules/q/q.js',
-            'plugin/node_modules/jquery/dist/jquery.js',
-            'plugin/node_modules/lodash/lodash.min.js',
-            'plugin/node_modules/chart.js/dist/Chart.bundle.js',
-            'plugin/node_modules/d3/d3.js',
-            'plugin/node_modules/file-saver/FileSaver.min.js',
-            'plugin/common/**/*.js',
-            'plugin/core/**/*.js',
-            'specs/**/*.js',
-            'specs/fixtures/**/*.json'
+            // 'plugin/node_modules/q/q.js',
+            // 'plugin/node_modules/jquery/dist/jquery.js',
+            // 'plugin/node_modules/lodash/lodash.min.js',
+            // 'plugin/node_modules/chart.js/dist/Chart.bundle.js',
+            // 'plugin/node_modules/d3/d3.js',
+            // 'plugin/node_modules/file-saver/FileSaver.min.js',
+            // 'plugin/common/**/*.js',
+            // 'plugin/core/**/*.js',
+            // 'specs/**/*.js',
+            // 'specs/fixtures/**/*.json'
+
+            // 'specs/hellotest/hello.test.ts',
+            { pattern: "specs/hellotest/*.ts" }
         ],
         exclude: [
-            '**/*.map',
-            'plugin/common/scripts/Background.js',
-            'plugin/core/scripts/SystemJS.*.js',
-            'plugin/core/scripts/InstallUpdateHandler.js',
-            'plugin/core/scripts/interfaces/*.js',
-            'plugin/core/scripts/Content.js'
+            // '**/*.map',
+            // 'plugin/common/scripts/Background.js',
+            // 'plugin/core/scripts/SystemJS.*.js',
+            // 'plugin/core/scripts/InstallUpdateHandler.js',
+            // 'plugin/core/scripts/interfaces/*.js',
+            // 'plugin/core/scripts/Content.js'
+
+
         ],
-        systemjs: {
+        /*systemjs: {
             serveFiles: [], // Patterns for files that you want Karma to make available, but not loaded until a module requests them. eg. Third-party libraries.
             config: { // SystemJS configuration
                 packages: {
@@ -65,10 +73,15 @@ module.exports = function (config) {
                     'file-saver': 'npm@plugin:file-saver/FileSaver.min.js'
                 }
             }
+        },*/
+        karmaTypescriptConfig: {
+            tsconfig: "./tsconfig.specs.json"
         },
         preprocessors: {
+            "specs/hellotest/hello.test.ts": ["karma-typescript"],
             'specs/fixtures/**/*.json': ['json_fixtures']
         },
+        reporters: ["dots", "karma-typescript"],
         jsonFixturesPreprocessor: {
             // strip this from the file path \ fixture name
             stripPrefix: 'specs/',
@@ -81,7 +94,7 @@ module.exports = function (config) {
             // transform the filename
             transformPath: function (path) {
                 return path + '.js';
-            } 
+            }
         },
         colors: true,
         singleRun: true,
