@@ -1,8 +1,18 @@
+describe('Generate pppp Update', () => {
 
+    it('should return compliant mmm (free)', () => {
 
-describe('Generate Athlete Update', () => {
+        expect(true).toBeTruthy();
+    });
+    it('should return compliant mmm (free)', () => {
 
-    it('should return compliant AthleteUpdate (free)', () => {
+        expect(true).toBeTruthy();
+    });
+    it('should return compliant mmm (free)', () => {
+
+        expect(true).toBeTruthy();
+    });
+    it('should return compliant mmm (free)', () => {
 
         expect(true).toBeTruthy();
     });

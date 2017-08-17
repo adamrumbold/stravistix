@@ -32,8 +32,8 @@ module.exports = function (config) {
             // 'specs/**/*.js',
             // 'specs/fixtures/**/*.json'
 
-            // 'specs/hellotest/hello.test.ts',
-            { pattern: "specs/hellotest/*.ts" }
+            'specs/hellotest/*.ts',
+            // { pattern: "specs/hellotest/*.ts" }
         ],
         exclude: [
             // '**/*.map',
@@ -78,7 +78,7 @@ module.exports = function (config) {
             tsconfig: "./tsconfig.specs.json"
         },
         preprocessors: {
-            "specs/hellotest/hello.test.ts": ["karma-typescript"],
+            '**/*.ts': ['karma-typescript'],
             'specs/fixtures/**/*.json': ['json_fixtures']
         },
         reporters: ["dots", "karma-typescript"],
