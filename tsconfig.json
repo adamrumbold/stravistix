@@ -5,10 +5,8 @@
   "include": [
     // Common
     "plugin/common/**/*.ts",
-
     // Core
     "plugin/core/**/*.ts",
-
     // AngularJS webapp
     "plugin/options/**/*.ts",
     // specs
@@ -20,7 +18,11 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "lib": ["dom", "es6", "webworker"],
+    "lib": [
+      "dom",
+      "es6",
+      "webworker"
+    ],
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,

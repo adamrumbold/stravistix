@@ -3,7 +3,7 @@
     "plugin/core/core.d.ts"
   ],
   "include": [
-    "specs/hellotest/*.ts"
+    "specs/**/*.ts"
   ],
   "exclude": [
     "node_modules"
